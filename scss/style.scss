@@ -1,0 +1,861 @@
+@import "fonts.scss";
+@import "vars.scss";
+
+//Чтобы у сеошика в будещем не было сюрпризов при замене заголовков
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  margin: 0;
+}
+
+//Scroll
+html, body {
+  scrollbar-color: $light-blue; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;  /* толщина */
+}
+
+::-webkit-scrollbar {
+  width: 3px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #95C3FF;
+  border-radius: 13px;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.visually-hidden { //Для семантики
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.container {
+  width: 1620px;
+  margin: 0 auto;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Inter-Regular", sans-serif;
+  background-color: #f9f9f9;
+}
+
+//header start
+
+//header top-line
+.header {
+  &__top-line {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    background-color: #fff;
+    & .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    & .header__logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & .logo-link__text {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        & span {
+          background-color: $light-blue;
+          padding: 0 8px;
+          border-radius: 6px;
+          transform: rotate(2deg);
+          display: inline-block;
+          color: #fff;
+          margin-right: 18px;
+        }
+      }
+      & .header__logo-slogan {
+        color: $light-blue;
+        & span {
+          font-weight: 700;
+        }
+      }
+    }
+    & .user-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__links {
+        color: #919191;
+        & span {
+          color: $light-blue;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $light-blue;
+            bottom: 0;
+            left: 0;
+          }
+        }
+        & .about {
+          margin-left: 20px;
+        }
+      }
+      & .user-info__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        padding: 0 45px;
+        & .application {
+          font-weight: 700;
+          font-family: "Inter-Bold";
+          color: $light-blue;
+          border-radius: 13px;
+          padding: 11px 15px;
+        }
+        & .publish {
+          font-weight: 700;
+          font-family: "Inter-Bold";
+          color: #fff;
+          border-radius: 13px;
+          padding: 11px 15px;
+        }
+      }
+      & .user-info__account {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        & .user-name {
+          font-size: 16px;
+        }
+        & .user-settings {
+          border-radius: 5px;
+          width: 24px;
+          height: 24px;
+          border: none;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            width: 18px;
+            height: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//header bottom-line
+.bottom-line {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  & .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .header__form {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 31px;
+      background-color: #fff;
+      border-radius: 13px;
+      padding: 10px 6px 10px 0;
+      & div {
+        height: 100%;
+      }
+      & .search-form__input {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        padding-left: 20px;
+        border-right: 0.7px solid rgba(157, 157, 157, 0.35);
+        box-sizing: border-box;
+        min-height: 31px;
+      }
+      & .district-wrapper select {
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #9d9d9d;
+      }
+      & .category-wrapper {
+        flex-grow: 0;
+        width: 211px;
+        position: relative;
+        & .category__button {
+          //Стилизация выпадающего списка через button
+          background-color: transparent;
+          border: none;
+          border-radius: 13px 0 0 13px;
+          padding: 0 0 0 50px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          color: #9d9d9d;
+          border-right: 0.7px solid rgba(157, 157, 157, 0.35);
+          text-align: left;
+          transition: all 0.2s ease;
+          width: 100%;
+          cursor: pointer;
+          &:focus {
+            background-color: $grey-1;
+          }
+        }
+        & .dropdown__button-active  {
+          background-color: $grey-1;
+        }
+        &::before {
+          //иконка категории
+          position: absolute;
+          content: "";
+          width: 15px;
+          height: 11px;
+          background-image: url(../img/category-before.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          top: 9px;
+          left: 21px;
+          pointer-events: none;
+        }
+        & .dropdown__input {
+          display: none;
+        }
+        & .category__list {
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          list-style-type: none;
+          color: inherit;
+          height: 403px;
+          width: 360px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 13px;
+          top: 53px;
+          left: 15px;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.03);
+          display: none;//список спрята по умолчанию
+          z-index: 2;
+          & .category__list-item {
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 13px;
+            &:hover {
+              background-color: $grey-1;
+            }
+          }
+        }
+        & .dropdown__list-active { //Показываю список при клике через JS
+          display: block;
+        }
+      }
+      & .search-wrapper {
+        flex-grow: 2;
+        position: relative;
+        & .dropdown__input {
+          display: none;
+        }
+        & .search__list {
+          position: absolute;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          list-style-type: none;
+          color: inherit;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 13px;
+          top: 53px;
+          left: 15px;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.03);
+          display: none;
+          z-index: 2;
+          & .search__list-item {
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 13px;
+            &:hover {
+              background-color: $grey-1;
+            }
+          }
+        }
+        & .dropdown__list-active {
+          display: block;
+        }
+      }
+      & .date-wrapper,
+      .city-wrapper,
+      .district-wrapper {
+        flex-grow: 1;
+        max-width: 190px;
+        position: relative;
+        & input,
+        select {
+          padding-left: 50px;
+        }
+      }
+      & .date-wrapper::before {
+        content: "";
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        background-image: url(../img/date-before.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        top: 3px;
+        left: 18px;
+        pointer-events: none;
+      }
+      & .city-wrapper::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background-image: url(../img/city-before.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        top: 2px;
+        left: 15px;
+        pointer-events: none;
+      }
+      & .district-wrapper::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background-image: url(../img/district-before.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 0;
+        top: 2px;
+        left: 15px;
+        pointer-events: none;
+      }
+      & .reset {
+        background-color: transparent;
+        color: #9d9d9d;
+        border: none;
+        margin-right: 15px;
+      }
+      & .search-form__button {
+        background-color: $light-blue;
+        padding: 11px 15px;
+        border: none;
+        border-radius: 13px;
+        font-family: "Inter-Bold";
+        color: #fff;
+      }
+    }
+  }
+}
+
+//Чекбоксы
+.search-form__checkboxes {
+  display: flex;
+  margin-top: 20px;
+  & .search-form__checkbox {
+    display: none;
+    &:checked + .search-form__checkbox-label::after {
+      opacity: 1;
+    }
+    &:checked + .search-form__checkbox-label::before {
+      border: 1px solid $light-blue;
+    }
+    &:checked + .search-form__checkbox-label {
+      color: $light-blue;
+    }
+  }
+  & .search-form__checkbox-label {
+    z-index: 1;
+    position: relative;
+    padding-left: 72px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 24px;
+      height: 24px;
+      left: 36px;
+      top: -3px;
+      background-image: url(../img/checkbox-before.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      border-radius: 5px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 17px;
+      height: 12px;
+      left: 41px;
+      top: 4px;
+      background-image: url(../img/checkbox-after.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0;
+      transition: all 0.1s ease;
+    }
+  }
+}
+
+
+
+
+
+//состояния для всех подобных кнопок
+.blue-btn-condition {
+  transition: all 0.2s ease;
+  background-color: $light-blue;
+  &:hover {
+    background-color: $regular-blue;
+  }
+  &:active {
+    background-color: $dark-blue;
+  }
+  &:disabled {
+    background-color: #d2d2d2;
+  }
+}
+
+.grey-btn-condition {
+  transition: all 0.2s ease;
+  background-color: $grey-1;
+  &:hover {
+    background-color: #e1e8f1;
+  }
+  &:active {
+    background-color: #e5f0ff;
+  }
+  &:disabled {
+    background-color: #d2d2d2;
+  }
+}
+
+.settings-condition {
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+  &::after {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../img/settings-dots.svg);
+  }
+  &:hover {
+    background-color: #e9e9e9;
+  }
+  &:active::after {
+    background-image: url(../img/settings-blue.svg);
+  }
+}
+//header end
+
+
+
+// Goods start
+
+.goods { //Сетка секции товаров
+  display: flex;
+  justify-content: space-between;
+  & .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 30px 0;
+  }
+  & .goods__list {
+    padding-left: 0;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+    row-gap: 50px;
+  }
+}
+
+//Slider
+.slider {
+  width: 356px;
+  height: 325px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+  & .slider-pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    width: 100%;
+    height: 2px;
+    padding: 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 17px;
+    box-sizing: border-box;
+    &__button {
+      width: 30%;
+      height: 1px;
+      border-radius: 13px;
+      border: 2.5px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &-active {
+        background-color: $light-blue;
+      }
+    }
+  }
+  &-line {
+    width: 1068px;
+    display: flex;
+    position: relative;
+    transition: all 0.2s ease;
+    border-radius: 13px;
+  }
+}
+
+.goods__list-item {
+  max-width: 360px;
+  list-style-type: none;
+  & .list-item__img {
+    border-radius: 13px;
+  }
+  & .list-item__top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 40px;
+    margin: 5px 0 13px 0;
+    & .goods__author {
+      width: 26px;
+      height: 26px;
+    }
+    & .list-item__subtitle {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    & .list-item__like-button {
+      width: 28px;
+      height: 28px;
+      background-color: #F5F5F5;
+      border-radius: 50%;
+      border: none;
+      background-image: url(../img/like-button.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+    & .list-item__like-button-active {
+      background-image: url(../img/like-button-active.svg);
+      background-color: $light-blue;
+    }
+  }
+  & .list-item__middle {
+    display: flex;
+    justify-content: space-between;
+    color: #9D9D9D;
+    margin-bottom: 20px;
+  }
+  & .list-item__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .list-item__icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      & .list-item__icon {
+        background: rgba(229, 240, 255, 0.5);
+        padding: 5px;
+        border-radius: 50%;
+      }
+      & .refund-wrapper, .delivery-wrapper, .answer-wrapper, .desinfection-wrapper, .cheap-wrapper{
+        display: none; //Чтобы эти иконки появлялись при наличии определенного класса у List-item
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 110px;
+          height: 22px;
+          padding: 20px;
+          line-height: 100%;
+          color: $light-blue;
+          border-radius: 13px;
+          bottom: -64px;
+          left: 0;
+          display: none;
+          background-color: #fff;
+          z-index: 2;
+        }
+        &:hover::before {
+          display: block;
+        }
+        & .refund-wrapper::before {
+          
+        }
+        & .delivery-wrapper::before {
+        }
+        & .answer-wrapper::before {
+        }
+        & .desinfection-wrapper::before {
+        }
+        & .cheap-wrapper::before {
+          content: "Выгодно";
+        }
+      }
+    }
+  }
+}
+
+// Далее будут классы для появления иконок на товаре
+.experienced {
+  & .author__link { //Иконка опытного
+    position: relative;
+    & .goods__author {
+      width: 40px;
+      height: 40px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 22px;
+      height: 22px;
+      background-image: url(../img/experienced-author.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+      background-color: #fff;
+      border-radius: 50%;
+      bottom: -4px;
+      right: -4px;
+    }
+    &::before {
+      position: absolute;
+      content: "Опытный сосед";
+      width: 110px;
+      height: 22px;
+      padding: 20px;
+      line-height: 100%;
+      color: $light-blue;
+      border-radius: 13px;
+      bottom: -64px;
+      left: 0;
+      display: none;
+      background-color: #fff;
+      z-index: 2;
+    }
+    &:hover::before {
+      display: block;
+    }
+  }
+}
+
+.goods__list-item.refund .list-item__bottom .list-item__icons{ //Быстрый возврат
+  & .refund-wrapper {
+    display: block;
+    &::before {
+      content: "Быстрый возврат";
+      width: 130px;
+    }
+  }
+}
+
+.goods__list-item.delivery .list-item__bottom .list-item__icons { // Быстрая доставка
+  & .delivery-wrapper {
+    display: block;
+    &::before {
+      content: "Быстрая доставка";
+      width: 130px;
+    }
+  }
+}
+
+.goods__list-item.answer .list-item__bottom .list-item__icons { // Быстрый ответ
+  & .answer-wrapper {
+    display: block;
+    &::before {
+      content: "Быстро отвечает";
+      width: 120px;
+    }
+  }
+}
+
+.goods__list-item.desinfection .list-item__bottom .list-item__icons { // Продезинфецированно
+  & .desinfection-wrapper {
+    display: block;
+    &::before {
+      content: "Продезинфецированно";
+      width: 150px;
+    }
+  }
+}
+
+.goods__list-item.cheap .list-item__bottom .list-item__icons { // Выгодно
+  & .cheap-wrapper {
+    display: block;
+    &::before {
+      content: "Выгодно";
+      width: 54px;
+    }
+  }
+}
+
+// Goods Aside
+.announcements {
+  max-height: 700px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  & .announcement {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 160px;
+    max-width: 370px;
+    background-color: #fff;
+    border-radius: 13px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgba(43, 43, 43, 0.72);
+    margin-bottom: 20px;
+    &__top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+    }
+    &__author {
+      font-family: "Inter-Bold";
+      color: black;
+    }
+    &__text {
+      max-width: 297px;
+    }
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__price {
+      font-family: "Inter-Bold";
+      color: $light-blue;
+    }
+  }
+}
+
+
+.all-announcements {
+  color: $light-blue;
+  text-decoration: underline;
+}
+
+.statistics {
+  margin-top: 30px;
+  background-color: $light-blue;
+  border-radius: 13px;
+  height: 140px;
+  width: 370px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  &__column {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    & .column__item {
+      padding-top: 19px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title {
+    font-family: "Inter-Bold";
+    color: #fff;
+    font-size: 30px;
+    line-height: 15px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #fff;
+    max-width: 275px;
+    margin-bottom: 0;
+  }
+  &__pagination {
+    position: absolute;
+    width: 10px;
+    height: 62px;
+    right: 20px;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-item {
+      width: 7px;
+      height: 7px;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.4);
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+    &-item-active {
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+    }
+  }
+}
+
+// Goods end

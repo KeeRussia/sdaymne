@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СДАЙМНЕ</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body">
+
+  <header class="header">
+    <div class="header__top-line">
+      <div class="container">
+          <div class="header__logo">
+            <a href="main.html" class="header__logo-link">
+              <p class="logo-link__text">Сдай <span>мне</span></p>
+            </a>
+            <p class="header__logo-slogan"><span>по-соседски:</span> легко и надежно!</p>
+          </div>
+          <div class="user-info">
+            <div class="user-info__links">
+              <a href="#" class="location">Ваш город: <span>Санкт-Петербург</span></a>
+              <a href="#" class="about">О сервисе</a>
+            </div>
+            <div class="user-info__buttons">
+              <a href="#" class="application grey-btn-condition">Заявка</a>
+              <a href="#" class="publish blue-btn-condition">Разместить объявление</a>
+            </div>
+            <div class="user-info__account">
+              <img class="user-pic" src="img/account-img.jpg" alt="Ваша фотография">
+              <span class="user-name">Evgeniy.T</span>
+              <button class="user-settings settings-condition"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="bottom-line">
+      <div class="container">
+        <form action="post" class="header__form">
+          <div class="category-wrapper dropdown"> <!--Такие обертки необходимы для иконок-->
+            <button type="button" id="category" class="search-form__input dropdown__button category__button">Все категории
+            </button>
+              <ul class="dropdown__list category__list">
+                <li class="dropdown__list-item category__list-item" data-value="all">Все категории</li>
+                <li class="dropdown__list-item category__list-item" data-value="tools">Инструменты</li>
+                <li class="dropdown__list-item category__list-item" data-value="toys">Детские игрушки</li>
+                <li class="dropdown__list-item category__list-item" data-value="category1">Еще категория</li>
+                <li class="dropdown__list-item category__list-item" data-value="category2">И еще категория</li>
+              </ul>
+              <input type="text" name="select-category" class="dropdown__input">
+          </div>
+          <div class="search-wrapper dropdown">
+            <input type="text" class="search-form__input search dropdown__button" placeholder="Поиск вещей">
+            <ul class="dropdown__list search__list">
+              <li class="search__list-item dropdown__list-item">Велосипед</li>
+              <li class="search__list-item dropdown__list-item">Велосипеды</li>
+              <li class="search__list-item dropdown__list-item">Шоссейные Велосипеды</li>
+            </ul>
+            <input type="text" name="search" class="dropdown__input">
+          </div>
+          <div class="date-wrapper">
+            <input class="search-form__input date" placeholder="Cрок аренды" type="text">
+          </div>
+          <div class="city-wrapper">
+            <input type="text" name="city" id="city" class="search-form__input"  placeholder="Город">
+          </div>
+          <div class="district-wrapper">
+            <select name="district" id="district" class="search-form__input">
+              <option value="" selected disabled>Район</option>
+              <option value="">Район 1</option>
+              <option value="">Район 2</option>
+              <option value="">Район 3</option>
+              <option value="">Район 4</option>
+            </select>
+          </div>
+          <button class="reset">Сбросить</button>
+          <button class="search-form__button">Найти</button>
+        </form>
+        <div class="search-form__checkboxes">
+          <input type="checkbox" class="search-form__checkbox" id="delivery"><label for="delivery" class="search-form__checkbox-label">Доставка</label>
+          <input type="checkbox" class="search-form__checkbox" id="approvement" checked><label for="approvement" class="search-form__checkbox-label">Мгновенное подтверждение</label>
+          <input type="checkbox" class="search-form__checkbox" id="disinfection"><label for="disinfection" class="search-form__checkbox-label">Дезинфекция</label>
+          <input type="checkbox" class="search-form__checkbox" id="pledge"><label for="pledge" class="search-form__checkbox-label">Без залога</label>
+          <input type="checkbox" class="search-form__checkbox" id="return"><label for="return" class="search-form__checkbox-label">Досрочный возврат</label>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="goods">
+      <div class="container">
+        <h1 class="visually-hidden">Сдай мне</h1>
+        <h2 class="goods__title">Ваши соседи сдают в аренду</h2>
+          <div class="content-wrapper">
+            <div class="goods-wrapper">
+              <ul class="goods__list">
+                <li class="goods__list-item experienced refund delivery answer desinfection cheap">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer desinfection cheap">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-4.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-5.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-6.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer desinfection cheap">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer desinfection cheap">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+                <li class="goods__list-item refund delivery answer desinfection cheap">
+                  <div class="slider">
+                    <div class="slider-line">
+                      <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
+                      <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
+                    </div>
+                    <div class="slider-pagination">
+                      <span class="slider-pagination__button slide-1"></span>
+                      <span class="slider-pagination__button slide-2"></span>
+                      <span class="slider-pagination__button slide-3"></span>
+                    </div>
+                  </div>
+                  <div class="list-item__top">
+                    <a class="list-item__link author__link" href="#"><img src="img/goods-1-author.jpg" alt="Иван Иванов" class="goods__author"></a>
+                    <a class="list-item__link author-name__link" href="#"><h3 class="list-item__subtitle">Электросамокат Tordin Pegas</h3></a>
+                    <button class="list-item__like-button" type="button"></button>
+                  </div>
+                  <div class="list-item__middle">
+                    <span class="list-item__date">5 дней</span>
+                    <span class="list-item-location">Ярославль. Московский район</span>
+                  </div>
+                  <div class="list-item__bottom">
+                    <div class="list-item__icons">
+                      <div class="refund-wrapper"><img src="img/icon-refund.svg" alt="Быстрый возврат" class="list-item__icon refund"></div>
+                      <div class="delivery-wrapper"><img src="img/icon-delivery.svg" alt="Быстрая доставка" class="list-item__icon delivery"></div>
+                      <div class="answer-wrapper"><img src="img/icon-fast-answer.svg" alt="Быстро отвечает" class="list-item__icon answer"></div>
+                      <div class="desinfection-wrapper"><img src="img/icon-covid-free.svg" alt="Продезинфецированно" class="list-item__icon desinfection"></div>
+                      <div class="cheap-wrapper"><img src="img/icon-cheap.svg" alt="Выгодно" class="list-item__icon cheap"></div>
+                    </div>
+                    <span class="list-item__price">1000р в сутки</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="aside-wrapper">
+              <aside class="announcements">
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-1.jpg" alt="Дмитрий" class="announcement__pic">
+                    <span class="announcement__author">Дмитрий</span>
+                  </div>
+                  <p class="announcement__text">Возьму в аренду детский 4 колесный велосипед.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-2.jpg" alt="Алина Макенова" class="announcement__pic">
+                    <span class="announcement__author">Алина Макенова</span>
+                  </div>
+                  <p class="announcement__text">Ищу фотоаппарат зеркальный на 2 дня
+                    в Москвовской области.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">2 дня</span>
+                    <span class="announcement__price">3000.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-3.jpg" alt="Виктория" class="announcement__pic">
+                    <span class="announcement__author">Виктория</span>
+                  </div>
+                  <p class="announcement__text">Нужен гирокоптер на 7 дней для
+                    поездки в Японию.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-4.jpg" alt="Алексей" class="announcement__pic">
+                    <span class="announcement__author">Алексей </span>
+                  </div>
+                  <p class="announcement__text">Возьму в аренду детский 4 колесный велосипед.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-1.jpg" alt="Дмитрий" class="announcement__pic">
+                    <span class="announcement__author">Дмитрий</span>
+                  </div>
+                  <p class="announcement__text">Возьму в аренду детский 4 колесный велосипед.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-1.jpg" alt="Дмитрий" class="announcement__pic">
+                    <span class="announcement__author">Дмитрий</span>
+                  </div>
+                  <p class="announcement__text">Возьму в аренду детский 4 колесный велосипед.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+                <a href="#" class="announcement">
+                  <div class="announcement__top">
+                    <img src="img/announcement-1.jpg" alt="Дмитрий" class="announcement__pic">
+                    <span class="announcement__author">Дмитрий</span>
+                  </div>
+                  <p class="announcement__text">Возьму в аренду детский 4 колесный велосипед.</p>
+                  <div class="announcement__bottom">
+                    <span class="announcement__date">5 дней</span>
+                    <span class="announcement__price">2500.Руб/Сутки</span>
+                  </div>
+                </a>
+              </aside>
+              <a href="#" class="all-announcements">Смотреть все заявки</a>
+              <div class="statistics">
+                <div class="statistics__column">
+                  <div class="column__item">
+                    <h5 class="statistics__title">10.000 Руб</h5>
+                    <p class="statistics__text">Заработали вещи удачливого соседа на прошлой неделе</p>
+                  </div>
+                  <div class="column__item">
+                    <h5 class="statistics__title">10.000 Руб</h5>
+                    <p class="statistics__text">Заработали вещи удачливого соседа на прошлой неделе</p>
+                  </div>
+                  <div class="column__item">
+                    <h5 class="statistics__title">10.000 Руб</h5>
+                    <p class="statistics__text">Заработали вещи удачливого соседа на прошлой неделе</p>
+                  </div>
+                  <div class="column__item">
+                    <h5 class="statistics__title">10.000 Руб</h5>
+                    <p class="statistics__text">Заработали вещи удачливого соседа на прошлой неделе</p>
+                  </div>
+                  <div class="column__item">
+                    <h5 class="statistics__title">10.000 Руб</h5>
+                    <p class="statistics__text">Заработали вещи удачливого соседа на прошлой неделе</p>
+                  </div>
+                </div>
+                  
+                <div class="statistics__pagination">
+                  <div class="statistics__pagination-item statistics-1 statistics__pagination-item-active"></div>
+                  <div class="statistics__pagination-item statistics-2"></div>
+                  <div class="statistics__pagination-item statistics-3"></div>
+                  <div class="statistics__pagination-item statistics-4"></div>
+                  <div class="statistics__pagination-item statistics-5"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  
+<script src="js/script.js"></script>
+</body>
+</html>
