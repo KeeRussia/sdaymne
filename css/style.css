@@ -155,14 +155,17 @@ a {
 .header__top-line .user-info .user-info__account .user-name {
   font-size: 16px;
 }
-.header__top-line .user-info .user-info__account .user-settings {
+.header__top-line .user-info .user-info__account .setting-wrapper {
+  position: relative;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .user-settings {
   border-radius: 5px;
   width: 24px;
   height: 24px;
   border: none;
   position: relative;
 }
-.header__top-line .user-info .user-info__account .user-settings::after {
+.header__top-line .user-info .user-info__account .setting-wrapper .user-settings::after {
   content: "";
   position: absolute;
   left: 0;
@@ -172,6 +175,92 @@ a {
   margin: auto;
   width: 18px;
   height: 3px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  padding-left: 0;
+  display: none;
+  list-style-type: none;
+  min-width: 174px;
+  min-height: 205px;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 13px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list:not(:last-child) {
+  margin-bottom: 20px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .settings-link {
+  color: #9D9D9D;
+  padding: 8px 0 8px 40px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 13px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .settings-link:hover {
+  background-color: #E5F0FF;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .settings-link::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .profile::before {
+  background-image: url(../img/profile.svg);
+  width: 17px;
+  height: 17px;
+  left: 12px;
+  top: 8px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .rent::before {
+  background-image: url(../img/rent.svg);
+  width: 24px;
+  height: 24px;
+  left: 10px;
+  top: 3px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .favourites::before {
+  background-image: url(../img/favourites.svg);
+  width: 18px;
+  height: 16px;
+  left: 13px;
+  top: 9px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .notifications::before {
+  background-image: url(../img/notifications.svg);
+  width: 24px;
+  height: 24px;
+  left: 10px;
+  top: 4px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .parametres::before {
+  background-image: url(../img/parametres.svg);
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 6px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .settings__list-item .exit::before {
+  background-image: url(../img/exit.svg);
+  width: 18px;
+  height: 18px;
+  left: 12px;
+  top: 6px;
+}
+.header__top-line .user-info .user-info__account .setting-wrapper .setting-wrapper-active {
+  display: block;
 }
 
 .bottom-line {
@@ -204,13 +293,6 @@ a {
   border-right: 0.7px solid rgba(157, 157, 157, 0.35);
   box-sizing: border-box;
   min-height: 31px;
-}
-.bottom-line .container .header__form .district-wrapper select {
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  color: #9d9d9d;
 }
 .bottom-line .container .header__form .category-wrapper {
   flex-grow: 0;
@@ -291,6 +373,9 @@ a {
 .bottom-line .container .header__form .search-wrapper .dropdown__input {
   display: none;
 }
+.bottom-line .container .header__form .search-wrapper .dropdown__button:focus {
+  background-color: #E5F0FF;
+}
 .bottom-line .container .header__form .search-wrapper .search__list {
   position: absolute;
   margin: 0;
@@ -308,16 +393,97 @@ a {
   z-index: 2;
 }
 .bottom-line .container .header__form .search-wrapper .search__list .search__list-item {
-  margin-bottom: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 8px 12px;
   border-radius: 13px;
 }
+.bottom-line .container .header__form .search-wrapper .search__list .search__list-item:not(:last-child) {
+  margin-bottom: 14px;
+}
 .bottom-line .container .header__form .search-wrapper .search__list .search__list-item:hover {
   background-color: #E5F0FF;
 }
 .bottom-line .container .header__form .search-wrapper .dropdown__list-active {
+  display: block;
+}
+.bottom-line .container .header__form .city-wrapper {
+  position: relative;
+}
+.bottom-line .container .header__form .city-wrapper .dropdown__button:focus {
+  background-color: #E5F0FF;
+}
+.bottom-line .container .header__form .city-wrapper .dropdown__input {
+  display: none;
+}
+.bottom-line .container .header__form .city-wrapper .city__list {
+  margin: 0;
+  position: absolute;
+  list-style-type: none;
+  color: inherit;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 13px;
+  top: 53px;
+  left: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.03);
+  display: none;
+  z-index: 2;
+}
+.bottom-line .container .header__form .city-wrapper .city__list .city__list-item {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 13px;
+}
+.bottom-line .container .header__form .city-wrapper .city__list .city__list-item:not(:last-child) {
+  margin-bottom: 14px;
+}
+.bottom-line .container .header__form .city-wrapper .city__list .city__list-item:hover {
+  background-color: #E5F0FF;
+}
+.bottom-line .container .header__form .city-wrapper .dropdown__list-active {
+  display: block;
+}
+.bottom-line .container .header__form .district-wrapper {
+  position: relative;
+}
+.bottom-line .container .header__form .district-wrapper .search-form__input {
+  border: none;
+}
+.bottom-line .container .header__form .district-wrapper .dropdown__input {
+  display: none;
+}
+.bottom-line .container .header__form .district-wrapper .dropdown__button:focus {
+  background-color: #E5F0FF;
+}
+.bottom-line .container .header__form .district-wrapper .district__list {
+  margin: 0;
+  position: absolute;
+  list-style-type: none;
+  color: inherit;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 13px;
+  top: 53px;
+  left: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.03);
+  display: none;
+  z-index: 2;
+}
+.bottom-line .container .header__form .district-wrapper .district__list .district__list-item {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 13px;
+}
+.bottom-line .container .header__form .district-wrapper .district__list .district__list-item:not(:last-child) {
+  margin-bottom: 14px;
+}
+.bottom-line .container .header__form .district-wrapper .district__list .district__list-item:hover {
+  background-color: #E5F0FF;
+}
+.bottom-line .container .header__form .district-wrapper .dropdown__list-active {
   display: block;
 }
 .bottom-line .container .header__form .date-wrapper,
@@ -328,11 +494,8 @@ a {
   position: relative;
 }
 .bottom-line .container .header__form .date-wrapper input,
-.bottom-line .container .header__form .date-wrapper select,
 .bottom-line .container .header__form .city-wrapper input,
-.bottom-line .container .header__form .city-wrapper select,
-.bottom-line .container .header__form .district-wrapper input,
-.bottom-line .container .header__form .district-wrapper select {
+.bottom-line .container .header__form .district-wrapper input {
   padding-left: 50px;
 }
 .bottom-line .container .header__form .date-wrapper::before {
@@ -373,12 +536,6 @@ a {
   top: 2px;
   left: 15px;
   pointer-events: none;
-}
-.bottom-line .container .header__form .reset {
-  background-color: transparent;
-  color: #9d9d9d;
-  border: none;
-  margin-right: 15px;
 }
 .bottom-line .container .header__form .search-form__button {
   background-color: #267DED;
@@ -549,6 +706,7 @@ a {
   position: relative;
   transition: all 0.2s ease;
   border-radius: 13px;
+  left: 0;
 }
 
 .goods__list-item {
@@ -566,9 +724,18 @@ a {
   height: 40px;
   margin: 5px 0 13px 0;
 }
+.goods__list-item .list-item__top .author__link {
+  position: relative;
+  background-image: url(../img/author-icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+}
 .goods__list-item .list-item__top .goods__author {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
 }
 .goods__list-item .list-item__top .list-item__subtitle {
   font-weight: 400;
@@ -595,6 +762,27 @@ a {
   justify-content: space-between;
   color: #9D9D9D;
   margin-bottom: 20px;
+}
+.goods__list-item .list-item__middle .list-item__date {
+  position: relative;
+}
+.goods__list-item .list-item__middle .list-item__date::before {
+  position: absolute;
+  content: "Минимальный срок аренды";
+  width: 195px;
+  height: 22px;
+  padding: 20px;
+  line-height: 100%;
+  color: #267DED;
+  border-radius: 13px;
+  bottom: -64px;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+}
+.goods__list-item .list-item__middle .list-item__date:hover::before {
+  display: block;
 }
 .goods__list-item .list-item__bottom {
   display: flex;
@@ -633,16 +821,9 @@ a {
 .goods__list-item .list-item__bottom .list-item__icons .refund-wrapper:hover::before, .goods__list-item .list-item__bottom .list-item__icons .delivery-wrapper:hover::before, .goods__list-item .list-item__bottom .list-item__icons .answer-wrapper:hover::before, .goods__list-item .list-item__bottom .list-item__icons .desinfection-wrapper:hover::before, .goods__list-item .list-item__bottom .list-item__icons .cheap-wrapper:hover::before {
   display: block;
 }
-.goods__list-item .list-item__bottom .list-item__icons .refund-wrapper .cheap-wrapper::before, .goods__list-item .list-item__bottom .list-item__icons .delivery-wrapper .cheap-wrapper::before, .goods__list-item .list-item__bottom .list-item__icons .answer-wrapper .cheap-wrapper::before, .goods__list-item .list-item__bottom .list-item__icons .desinfection-wrapper .cheap-wrapper::before, .goods__list-item .list-item__bottom .list-item__icons .cheap-wrapper .cheap-wrapper::before {
-  content: "Выгодно";
-}
 
 .experienced .author__link {
   position: relative;
-}
-.experienced .author__link .goods__author {
-  width: 40px;
-  height: 40px;
 }
 .experienced .author__link::after {
   position: absolute;
@@ -677,44 +858,152 @@ a {
   display: block;
 }
 
+.new .author__link {
+  position: relative;
+}
+.new .author__link::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url(../img/new-author.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -4px;
+  right: -4px;
+}
+.new .author__link::before {
+  position: absolute;
+  content: "Опытный сосед";
+  width: 110px;
+  height: 22px;
+  padding: 20px;
+  line-height: 100%;
+  color: #267DED;
+  border-radius: 13px;
+  bottom: -64px;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+}
+.new .author__link:hover::before {
+  display: block;
+}
+
+.perfect .author__link {
+  position: relative;
+}
+.perfect .author__link::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url(../img/perfect-author.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -4px;
+  right: -4px;
+}
+.perfect .author__link::before {
+  position: absolute;
+  content: "Опытный сосед";
+  width: 110px;
+  height: 22px;
+  padding: 20px;
+  line-height: 100%;
+  color: #267DED;
+  border-radius: 13px;
+  bottom: -64px;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+}
+.perfect .author__link:hover::before {
+  display: block;
+}
+
+.profi .author__link {
+  position: relative;
+}
+.profi .author__link::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url(../img/profi-author.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -4px;
+  right: -4px;
+}
+.profi .author__link::before {
+  position: absolute;
+  content: "Опытный сосед";
+  width: 110px;
+  height: 22px;
+  padding: 20px;
+  line-height: 100%;
+  color: #267DED;
+  border-radius: 13px;
+  bottom: -64px;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+}
+.profi .author__link:hover::before {
+  display: block;
+}
+
 .goods__list-item.refund .list-item__bottom .list-item__icons .refund-wrapper {
   display: block;
 }
 .goods__list-item.refund .list-item__bottom .list-item__icons .refund-wrapper::before {
-  content: "Быстрый возврат";
-  width: 130px;
+  content: "Досрочный возврат";
+  width: 140px;
 }
 
 .goods__list-item.delivery .list-item__bottom .list-item__icons .delivery-wrapper {
   display: block;
 }
 .goods__list-item.delivery .list-item__bottom .list-item__icons .delivery-wrapper::before {
-  content: "Быстрая доставка";
-  width: 130px;
+  content: "Доставка";
+  width: 60px;
 }
 
 .goods__list-item.answer .list-item__bottom .list-item__icons .answer-wrapper {
   display: block;
 }
 .goods__list-item.answer .list-item__bottom .list-item__icons .answer-wrapper::before {
-  content: "Быстро отвечает";
-  width: 120px;
+  content: "Мгновенное подтверждение";
+  width: 200px;
 }
 
 .goods__list-item.desinfection .list-item__bottom .list-item__icons .desinfection-wrapper {
   display: block;
 }
 .goods__list-item.desinfection .list-item__bottom .list-item__icons .desinfection-wrapper::before {
-  content: "Продезинфецированно";
-  width: 150px;
+  content: "Провожу дезинфекцию";
+  width: 165px;
 }
 
 .goods__list-item.cheap .list-item__bottom .list-item__icons .cheap-wrapper {
   display: block;
 }
 .goods__list-item.cheap .list-item__bottom .list-item__icons .cheap-wrapper::before {
-  content: "Выгодно";
-  width: 54px;
+  content: "С залогом";
+  width: 80px;
 }
 
 .announcements {
@@ -778,6 +1067,7 @@ a {
   overflow: hidden;
 }
 .statistics__column {
+  top: 0;
   position: relative;
   width: 100%;
   height: 100%;

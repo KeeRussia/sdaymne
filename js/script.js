@@ -41,8 +41,20 @@ document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper){
 });
 
 
-//Слайдер карточки товара 
+//Список настроек по нажатию на кнопку в хедере 
+const settingsButton = document.querySelector('.user-settings');
+const settingsList = document.querySelector('.settings__list');
+settingsButton.addEventListener('click', function(){
+  settingsList.classList.toggle('setting-wrapper-active');
+  document.addEventListener('click', function(e) {
+    if (e.target !== settingsList && e.target !== settingsButton){
+      settingsList.classList.remove('setting-wrapper-active');
+    }
+  });
+});
 
+
+//Слайдер карточки товара 
 const sliderWrapper = document.querySelectorAll('.goods__list-item');
 sliderWrapper.forEach(function(wrapper){
   const sliderLine = wrapper.querySelector('.slider-line');

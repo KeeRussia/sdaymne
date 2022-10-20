@@ -33,7 +33,17 @@
             <div class="user-info__account">
               <img class="user-pic" src="img/account-img.jpg" alt="Ваша фотография">
               <span class="user-name">Evgeniy.T</span>
-              <button class="user-settings settings-condition"></button>
+              <div class="setting-wrapper">
+                <button class="user-settings settings-condition"></button>
+                <ul class="settings__list">
+                  <li class="settings__list-item"><a href="#" class="settings-link profile">Профиль</a></li>
+                  <li class="settings__list-item"><a href="#" class="settings-link rent">Кабинет аренды</a></li>
+                  <li class="settings__list-item"><a href="#" class="settings-link favourites">Избранное</a></li>
+                  <li class="settings__list-item"><a href="#" class="settings-link notifications">Уведомления</a></li>
+                  <li class="settings__list-item"><a href="#" class="settings-link parametres">Настройки</a></li>
+                  <li class="settings__list-item"><a href="#" class="settings-link exit">Выйти</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -54,30 +64,35 @@
               <input type="text" name="select-category" class="dropdown__input">
           </div>
           <div class="search-wrapper dropdown">
-            <input type="text" class="search-form__input search dropdown__button" placeholder="Поиск вещей">
+            <input type="text" class="search-form__input search dropdown__button" autocomplete="off" placeholder="Поиск вещей">
             <ul class="dropdown__list search__list">
-              <li class="search__list-item dropdown__list-item">Велосипед</li>
-              <li class="search__list-item dropdown__list-item">Велосипеды</li>
-              <li class="search__list-item dropdown__list-item">Шоссейные Велосипеды</li>
+              <li class="search__list-item dropdown__list-item" data-value="Bicycles">Велосипед</li>
+              <li class="search__list-item dropdown__list-item" data-value="Bicycles2">Велосипеды</li>
+              <li class="search__list-item dropdown__list-item" data-value="Cool bicycles">Шоссейные Велосипеды</li>
             </ul>
             <input type="text" name="search" class="dropdown__input">
           </div>
           <div class="date-wrapper">
             <input class="search-form__input date" placeholder="Cрок аренды" type="text">
           </div>
-          <div class="city-wrapper">
-            <input type="text" name="city" id="city" class="search-form__input"  placeholder="Город">
+          <div class="city-wrapper dropdown">
+            <input type="text" name="city" id="city" class="search-form__input dropdown__button" autocomplete="off"  placeholder="Город">
+            <ul class="dropdown__list city__list">
+              <li class="city__list-item dropdown__list-item" data-value="Moscow">Москва</li>
+              <li class="city__list-item dropdown__list-item" data-value="Novosibirsk">Новосибирск</li>
+              <li class="city__list-item dropdown__list-item" data-value="Ekaterinburg">Екатеринбург</li>
+            </ul>
+            <input type="text" name="search" class="dropdown__input">
           </div>
-          <div class="district-wrapper">
-            <select name="district" id="district" class="search-form__input">
-              <option value="" selected disabled>Район</option>
-              <option value="">Район 1</option>
-              <option value="">Район 2</option>
-              <option value="">Район 3</option>
-              <option value="">Район 4</option>
-            </select>
+          <div class="district-wrapper dropdown">
+            <input name="district" id="district" class="search-form__input dropdown__button" autocomplete="off" placeholder="Район">
+            <ul class="dropdown__list district__list">
+              <li class="district__list-item dropdown__list-item" data-value="Central">Цетральный</li>
+              <li class="district__list-item dropdown__list-item" data-value="Northern">Северный</li>
+              <li class="district__list-item dropdown__list-item" data-value="South">Южный</li>
+            </ul>
+            <input type="text" name="search" class="dropdown__input">
           </div>
-          <button class="reset">Сбросить</button>
           <button class="search-form__button">Найти</button>
         </form>
         <div class="search-form__checkboxes">
@@ -98,7 +113,7 @@
           <div class="content-wrapper">
             <div class="goods-wrapper">
               <ul class="goods__list">
-                <li class="goods__list-item experienced refund delivery answer desinfection cheap">
+                <li class="goods__list-item perfect refund delivery answer desinfection cheap">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
@@ -131,7 +146,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery">
+                <li class="goods__list-item experienced refund delivery">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-2.jpg" alt="Самокат" class="list-item__img">
@@ -164,7 +179,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer">
+                <li class="goods__list-item profi refund delivery answer">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-3.jpg" alt="Самокат" class="list-item__img">
@@ -197,7 +212,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer desinfection cheap">
+                <li class="goods__list-item profi refund delivery answer desinfection cheap">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-4.jpg" alt="Самокат" class="list-item__img">
@@ -230,7 +245,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery">
+                <li class="goods__list-item experienced refund delivery">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-5.jpg" alt="Самокат" class="list-item__img">
@@ -263,7 +278,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer">
+                <li class="goods__list-item profi refund delivery answer">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-6.jpg" alt="Самокат" class="list-item__img">
@@ -296,7 +311,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer desinfection cheap">
+                <li class="goods__list-item profi refund delivery answer desinfection cheap">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
@@ -329,7 +344,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer desinfection cheap">
+                <li class="goods__list-item new refund delivery answer desinfection cheap">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
@@ -362,7 +377,7 @@
                     <span class="list-item__price">1000р в сутки</span>
                   </div>
                 </li>
-                <li class="goods__list-item refund delivery answer desinfection cheap">
+                <li class="goods__list-item perfect refund delivery answer desinfection cheap">
                   <div class="slider">
                     <div class="slider-line">
                       <img src="img/slide-1.jpg" alt="Самокат" class="list-item__img">
