@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="libs/datepicker/css/datepicker.css" />
 </head>
 <body class="body">
 
@@ -73,7 +74,8 @@
             <input type="text" name="search" class="dropdown__input">
           </div>
           <div class="date-wrapper">
-            <input class="search-form__input date" placeholder="Cрок аренды" type="text">
+            <input id="inputDate" class="search-form__input date dropdown__button" autocomplete="off" placeholder="Cрок аренды" type="text">
+
           </div>
           <div class="city-wrapper dropdown">
             <input type="text" name="city" id="city" class="search-form__input dropdown__button" autocomplete="off"  placeholder="Город">
@@ -533,5 +535,25 @@
     </section>
   </main>  
 <script src="js/script.js"></script>
+<!-- Для календаря в хедере -->
+<script src="libs/datepicker/js/jquery.js"></script>
+<script type="text/javascript" src="libs/datepicker/js/datepicker.js"></script>
+<script>
+  $('#inputDate').DatePicker({
+	format:'m/d/Y',
+	date: $('#inputDate').val(),
+	current: $('#inputDate').val(),
+  mode: 'range',
+	starts: 1,
+	position: 'r',
+  format: 'D-m-y',
+	onChange: function(formated, dates){
+		$('#inputDate').val(formated);
+		if ($('#closeOnSelect input').attr('checked')) {
+			$('#inputDate').DatePickerHide();
+		}
+	}
+});
+</script>
 </body>
 </html>

@@ -498,6 +498,15 @@ a {
 .bottom-line .container .header__form .district-wrapper input {
   padding-left: 50px;
 }
+.bottom-line .container .header__form .date-wrapper {
+  max-width: 230px;
+}
+.bottom-line .container .header__form .date-wrapper .date {
+  color: rgba(43, 43, 43, 0.72);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 .bottom-line .container .header__form .date-wrapper::before {
   content: "";
   width: 21px;

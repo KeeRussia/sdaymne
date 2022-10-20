@@ -481,10 +481,6 @@ a {
             display: block;
           }
         }
-        .date-wrapper{
-          
-        }
-      
       & .date-wrapper,
       .city-wrapper,
       .district-wrapper {
@@ -494,6 +490,16 @@ a {
         & input {
           padding-left: 50px;
         }
+      }
+      
+      .date-wrapper{
+          max-width: 230px;
+          & .date {
+            color: rgba(43, 43, 43, 0.72);
+            appearance: none;;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          }
       }
       & .date-wrapper::before {
         content: "";
@@ -545,6 +551,7 @@ a {
     }
   }
 }
+
 
 //Чекбоксы
 .search-form__checkboxes {
